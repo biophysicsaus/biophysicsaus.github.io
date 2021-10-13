@@ -37,9 +37,17 @@ module.exports = function (eleventyConfig) {
 
   // Filters let you modify the content https://www.11ty.dev/docs/filters/
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-    return DateTime.fromJSDate(new Date(dateObj), {
-      zone: "utc",
-    }).toLocaleString(DateTime.DATE_FULL);
+    console.log(dateObj);
+    return DateTime.fromJSDate(new Date(dateObj)).toLocaleString(
+      DateTime.DATE_MED
+    );
+  });
+
+  eleventyConfig.addFilter("htmlTimeString", (dateObj) => {
+    console.log(dateObj);
+    return DateTime.fromJSDate(new Date(dateObj)).toLocaleString(
+      DateTime.TIME_WITH_SHORT_OFFSET
+    );
   });
 
   eleventyConfig.addFilter("titleCase", (text) => {

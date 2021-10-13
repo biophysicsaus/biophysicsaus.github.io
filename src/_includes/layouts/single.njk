@@ -22,18 +22,46 @@ templateClass: single
                             <a href="{{talk.url}}">{% labname talk.name %}</a>
                         </div>
                         <div class="pt-5">
-                            <div><strong>Date: </strong> {{talk.date | htmlDateString}}</div>
-                            <div><strong>Time: </strong>{{talk.time}}</div>
+                            <div class="flex pr-1 items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg> <span class="pl-1 font-medium"> : {{(talk.date +" " +talk.time) |
+                                    htmlDateString}}</span>
+                            </div>
+                            <div class="flex pr-1 items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg> <span class="pl-1 font-medium"> : {{(talk.date +" " +talk.time) |
+                                    htmlTimeString}}</span>
+                            </div>
                         </div>
                     </div>
                     <div class="pr-5 md:text-justify text-xl">
                         <div>
                             {% if talk.zoom %}
-                            <div>
-                                <span>Zoom id: </span><a href="{{talk.zoom.url}}"><strong>{{talk.zoom.id}}</strong></a>
-                            </div>
-                            <div>
-                                <strong>Password: </strong><strong>{{talk.zoom.password}}</strong>
+                            <div class="">
+                                <div class="pr-2 flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 stroke-current"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                    </svg>
+                                    <span class="text-sm md:text-base"> : <a
+                                            href="{{talk.zoom.url}}"><strong>{{talk.zoom.id}}</strong></a></span>
+                                </div>
+                                <div class="pr-2 pt-1 flex items-center ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                                    </svg>
+
+                                    <span class="text-sm md:text-base"> : <strong>{{talk.zoom.password}}</strong></span>
+                                </div>
                             </div>
                             <div class="flex items-center pt-5">
                                 <span class="flex items-center">
@@ -199,7 +227,8 @@ templateClass: single
                                         </a>
                                     </span>
                                     <span class="px-2">
-                                        <a href="{{talk.meta.calendar.ics}}">Ics</a>
+                                        <a class="px-1 no-underline border rounded border-gray-500 hover:bg-gray-300"
+                                            href="{{talk.meta.calendar.ics}}">ICS</a>
                                     </span>
 
                                 </span>
