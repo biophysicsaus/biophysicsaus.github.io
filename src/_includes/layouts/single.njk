@@ -21,7 +21,7 @@ templateClass: single
                         <div>
                             <a href="{{talk.url}}">{% labname talk.name %}</a>
                         </div>
-                        <div class="pt-5">
+                        <div class="pt-5 text-sm md:text-base">
                             <div class="flex pr-1 items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
@@ -45,11 +45,16 @@ templateClass: single
                             {% if talk.zoom %}
                             <div class="">
                                 <div class="pr-2 flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 stroke-current"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                                    </svg>
+                                    <span class="-ml-2 h-6 w-8">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-full w-full text-blue-600 stroke-current" fill="none"
+                                            viewBox="0 0 24 30" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                            <text x=0, y=28 class="text-xs">zoom</text>
+                                        </svg>
+
+                                    </span>
                                     <span class="text-sm md:text-base"> : <a
                                             href="{{talk.zoom.url}}"><strong>{{talk.zoom.id}}</strong></a></span>
                                 </div>
@@ -242,23 +247,23 @@ templateClass: single
                         </div>
                     </div>
                 </div>
-                <div class="w-1/4 shadow-md rounded-lg">
+                <div class="w-1/4 md:w-2/4 shadow-md rounded-lg">
                     <img class="object-cover h-full rounded-lg" src="/assets/images/{{talk.image}}" alt="{{talk.name}}">
                 </div>
             </div>
-            <div class="text-xl md:p-5 pt-5">
+            <article class="md:p-5 pt-5 prose prose-sm md:prose-lg lg:prose-xl max-w-full">
                 <h4 class="text-md font-bold pb-3">{{talk.title | titleCase if talk.title }}</h4>
                 <p>{{talk.about}}</p>
-            </div>
+            </article>
             {% if talk.references %}
-            <div class="text-xl md:p-5 pt-5">
+            <article class="md:p-5 pt-5 prose prose-sm md:prose-lg lg:prose-xl max-w-full">
                 <p>References</p>
-                <ol class="list-decimal list-inside space-y-2">
+                <ol>
                     {% for r in talk.references %}
                     <li>{{r}}</li>
                     {% endfor %}
                 </ol>
-            </div>
+            </article>
             {% endif %}
         </div>
     </div>

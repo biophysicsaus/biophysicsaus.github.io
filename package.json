@@ -16,6 +16,7 @@
     "eleventy-plugin-metagen": "^1.4.8"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.7",
     "calendar-link": "^2.1.1",
     "eleventy-plugin-seo": "^0.5.2",
