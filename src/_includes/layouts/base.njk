@@ -7,7 +7,7 @@
     <meta name="description" content="biophysics Australia Seminar Series" />
     <link rel="stylesheet" type="text/css" href="/assets/style/style.css" />
     {% metagen
-    title=talk.name or site.title,
+    title=(talk.name+':' +talk.title ) or site.title,
     desc= talk.about  or site.desc,
     url=site.url + page.url,
     img= site.url+'/assets/images/'+ (talk.image or site.image),
