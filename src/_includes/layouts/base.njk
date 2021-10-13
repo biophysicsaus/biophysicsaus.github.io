@@ -7,7 +7,7 @@
     <meta name="description" content="biophysics Australia Seminar Series" />
     <link rel="stylesheet" type="text/css" href="/assets/style/style.css" />
     {% metagen
-    title=talk.name or site.title,
+    title=(talk.name+':' +talk.title ) or site.title,
     desc= talk.about  or site.desc,
     url=site.url + page.url,
     img= site.url+'/assets/images/'+ (talk.image or site.image),
@@ -28,7 +28,7 @@
             <h1 class="px-2">Biophysics Australia Seminar Series</h1>
         </div>
         <nav class="flex justify-center container m-auto text-center py-5">
-            <div class="grid grid-cols-3 gap-2 place-content-center text-white">
+            <div class="grid grid-cols-2 gap-2 place-content-center text-white">
                 <a class="no-underline py-2 px-3 border-2 border-gray-400 rounded-md hover:bg-gray-400" href="/">Home</a>
                 <a class="no-underline py-2 px-3 border-2 border-gray-400 rounded-md hover:bg-gray-400" href="/about">About</a>
             </div>
@@ -44,6 +44,16 @@
             </p>
         </div>
     </footer>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBT8Q08D06"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BBT8Q08D06');
+</script>
 
     {# fb share button #}
     <div id="fb-root"></div>
