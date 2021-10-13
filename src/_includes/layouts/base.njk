@@ -13,9 +13,10 @@
     img= site.url+'/assets/images/'+ (talk.image or site.image),
     img_alt=talk.name or site.title,
     twitter_card_type="summary_large_image",
-    twitter_handle='biophysicsaus',
+    twitter_handle=site.twitter,
     name=talk.name or site.title
     %}
+    <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
 </head>
 
 <body>
@@ -44,6 +45,29 @@
         </div>
     </footer>
 
+    {# fb share button #}
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"
+        nonce="oFn82nkR"></script>
+    {# twitter share button #}
+    <script>
+        window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
 </body>
 
 </html>
