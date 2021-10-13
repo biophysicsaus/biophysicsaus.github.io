@@ -19,6 +19,7 @@ talks.map((talk) => {
     talk.name.toLowerCase()
   )}/`;
   if (talk.zoom) {
+    console.dir(calendar(talk.zoom, talk));
     talk["meta"]["calendar"] = {};
     talk["meta"]["calendar"]["google"] = google(calendar(talk.zoom, talk));
     talk["meta"]["calendar"]["outlook"] = outlook(calendar(talk.zoom, talk));
