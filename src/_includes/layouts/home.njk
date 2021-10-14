@@ -9,8 +9,8 @@ templateClass: home
             {{ content | safe }}
         </article>
     </div>
-    <div class="container m-auto">
-        <h2>Upcoming talks</h2>
+    <div class="container m-auto ">
+        <h2 class="text-3xl pb-5">Upcoming talks</h2>
         <div class="m-auto md:grid md:grid-cols-2 md:gap-5 pb-5">
             {% for talk in talks %}
             {% if talk.active %}
@@ -26,21 +26,23 @@ templateClass: home
                                 </h2>
                                 <h4 class="text-md font-bold">{{talk.title | titleCase if talk.title }}</h4>
                             </div>
-                            <div class="pl-5">
-                                <blockquote class="break-words prose">
+                            <div class="pl-5 prose">
+                                <p class="break-words ">
                                     <a class="prose no-underline"
                                         href="/talk/{{ talk.date | slug }}-{{ talk.name | slug }}/">{%
                                         textsize
                                         talk.about,
                                         350
                                         %}</a>
-                                </blockquote>
-                                <p class="text-md pt-2 italic">{{talk.organization | titleCase if talk.organization }}
                                 </p>
+                                <span class=" relative -top-8 right-30 italic lead">{{talk.organization |
+                                    titleCase if talk.organization
+                                    }}
+                                </span>
                             </div>
                             <div class="pl-5">
                                 <div class="flex items-center">
-                                    <span class="px-2">{{talk.meta.social.twitter | safe}}</span>
+                                    <span class="pr-2">{{talk.meta.social.twitter | safe}}</span>
                                     <span class="px-2">{{talk.meta.social.facebook | safe}}</span>
 
                                 </div>
