@@ -5,7 +5,7 @@ templateClass: home
 
 <main class="md:p-10 p-5">
     <div class="container m-auto">
-        <article class=" prose prose-sm md:prose-xl max-w-full">
+        <article class=" prose md:prose-xl max-w-full">
             {{ content | safe }}
         </article>
     </div>
@@ -74,13 +74,13 @@ templateClass: home
                         {% if talk.zoom %}
                         <div class="flex items-center">
                             <div class="pr-2 flex items-center">
-                                <span class="-ml-1 h-6 w-8">
+                                <span class="h-6 w-6">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="h-full w-full text-blue-600 stroke-current" fill="none"
-                                        viewBox="0 0 24 30" stroke="currentColor">
+                                        viewBox="0 0 30 30" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                                        <text x=0, y=28 class="text-xs">zoom</text>
+                                        <text x=0, y=28 style="font-size: 0.65rem;">zoom</text>
                                     </svg>
 
                                 </span>
