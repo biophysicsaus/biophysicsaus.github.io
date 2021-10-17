@@ -18,7 +18,7 @@ function generateTwitterLink(meta) {
   const encodedPayload = `url=${encodeURIComponent(
     meta.link
   )}&text=${encodeURIComponent(meta.title)}`;
-  return `<a class="twitter-share-button" href="${TWITTER_BASE}${encodedPayload}&hashtags=biophysicsaus,biophysics" data-size="large">Tweet</a>`;
+  return `<a class="twitter-share-button" href="${TWITTER_BASE}${encodedPayload}&hashtags=biophysicsaus,biophysics&via=biophysicsaus" data-size="large">Tweet</a>`;
 }
 
 function generateLinkedInLink(meta) {
