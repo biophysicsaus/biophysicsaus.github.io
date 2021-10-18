@@ -40,14 +40,18 @@ module.exports = function (eleventyConfig) {
     console.log(dateObj);
     return DateTime.fromJSDate(new Date(dateObj), {
       zone: "Australia/Sydney",
-    }).toLocaleString(DateTime.DATE_MED);
+    })
+      .setLocale("en-AU")
+      .toLocaleString(DateTime.DATE_MED);
   });
 
   eleventyConfig.addFilter("htmlTimeString", (dateObj) => {
     console.log(dateObj);
     let r = DateTime.fromJSDate(new Date(dateObj), {
       zone: "Australia/Sydney",
-    }).toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET);
+    })
+      .setLocale("en-AU")
+      .toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET);
     console.log(r);
     return r;
   });
