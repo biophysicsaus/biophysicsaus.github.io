@@ -38,16 +38,18 @@ module.exports = function (eleventyConfig) {
   // Filters let you modify the content https://www.11ty.dev/docs/filters/
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
     console.log(dateObj);
-    return DateTime.fromJSDate(new Date(dateObj)).toLocaleString(
-      DateTime.DATE_MED
-    );
+    return DateTime.fromJSDate(new Date(dateObj), {
+      zone: "Australia/Sydney",
+    }).toLocaleString(DateTime.DATE_MED);
   });
 
   eleventyConfig.addFilter("htmlTimeString", (dateObj) => {
     console.log(dateObj);
-    return DateTime.fromJSDate(new Date(dateObj)).toLocaleString(
-      DateTime.TIME_WITH_SHORT_OFFSET
-    );
+    let r = DateTime.fromJSDate(new Date(dateObj), {
+      zone: "Australia/Sydney",
+    }).toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET);
+    console.log(r);
+    return r;
   });
 
   eleventyConfig.addFilter("titleCase", (text) => {
